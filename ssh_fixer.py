@@ -24,7 +24,7 @@ def test_ssh(host_title):
 
 def test_filenames(dirname, filenames):
   for filename in filenames:
-    if filename.startswith('.') or filename in {'known_hosts', 'config'}:
+    if filename == 'known_hosts':
       continue
     path = os.path.join(dirname, filename)
     with open(path) as f:
