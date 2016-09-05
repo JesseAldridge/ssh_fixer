@@ -31,7 +31,6 @@ def test_filenames(dirname, filenames):
       text = f.read()
     if not text.startswith('-----BEGIN RSA PRIVATE KEY-----'):
       continue
-    # print 'perms:', oct(os.stat(path)[stat.ST_MODE])[-3:]
     os.chmod(path, 0o600)
     path = re.sub('^' + os.path.expanduser('~'), '~', path)
     print '  trying key:', path
